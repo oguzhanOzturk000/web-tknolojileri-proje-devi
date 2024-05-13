@@ -1,21 +1,188 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Şehrim</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .flexbox-container{
+            display: flex;
+            justify-content: center;
+        }
+        .flexbox-1{
+            min-width :10px;
+        }
+        .flexbox-2{
+            min-width: 500px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.774);
+            width: 900px;    
+            color: whitesmoke;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+        }
+        .flexbox-3{
+            min-width:10px ;
+            
+        }
+        body{
+            
+            background-image: url(../resources/tophane.jpg);
+            background-blend-mode: multiply;
+            background-position: cover;
+            background-size: 100% 100%;
+            background-repeat: no-repeat ;
+            background-attachment: fixed;
+            overflow-x: hidden;
+            
+
+        }
+        header{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            background-color:darkcyan;
+            color:white;
+            padding: 5px;
+            text-align:center;
+            border: 2px solid black;
+            margin: 0px;
+            border-radius: 0.5rem;
+            top: 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        body{
+            background-color:whitesmoke;
+            font-family: work sans;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        footer{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(148, 146, 146);
+            text-align: center;
+            border-radius: 0.5rem;
+            padding: 2px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .log-in{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            position: absolute;
+            width: 170px ;
+            height: 91.5px;
+            border-radius: 0.5rem;
+            background-color: rgb(0, 121, 121);
+            text-align: center;
+            top: 10px;
+            right: 10px;
+        }
+        .indexLoggedinDiv{
+            margin: 0px;
+            position: absolute;
+            top: 2px;
+            height: 45.75px;
+            width: 170px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-top-left-radius: .5rem;
+            border-top-right-radius:.5rem ;
+        }
+        .inedxLoginButtonDiv{
+            
+            position: absolute;
+            top: 47.75px;
+            height: 45.75px;
+            width: 170px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-bottom-left-radius: .5rem;
+            border-bottom-right-radius:.5rem ;
+        }
+        .inedxLoginButton{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            background-color: rgb(0, 106, 106);
+            padding: 0px;
+            margin: 0px;
+            position: relative;
+            height: 45.75px;
+            width: 170px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-bottom-left-radius: .5rem;
+            border-bottom-right-radius:.5rem ;
+            cursor: pointer;
+            transition: .5s;
+        }
+        .inedxLoginButton:hover{
+            background-color: rgb(0, 135, 135);
+            height: 47px;
+            width: 173px;
+        }
+        .container{
+            padding: 2px;
+
+        }
+        .slider-wrapper{
+            position: relative;
+            max-width: 40rem;
+            margin: 0 auto;   
+        }
+        .slider{
+            display: flex;
+            aspect-ratio: 4/3;
+            overflow-x: hidden;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            box-shadow:0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25) ;
+            border-radius: 0.5rem;
+        }
+        .slider img{
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            object-fit: cover;
+        }
+        .slider-nav{
+            display: flex;
+            column-gap: 1rem;
+            position: absolute;
+            bottom :1.25rem;
+            left:50%;
+            transform: translateX(-50%);
+            z-index:1;
+
+        }
+        .slider-nav a{
+            width: 1rem;
+            height: 1rem;
+            border-radius: 30%;
+            background-color: #ffffff;
+            opacity:0.75;
+            transition: opacity ease 250ms;
+        }
+        .slider-nav a:hover{
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-    <script src="index.js"></script>
     <header>
         <h1>BURSA</h1>
         <div class="log-in">
             <div class="indexLoggedinDiv">
-                <h1 class="indexLoggedin" name="indexLoggedin"></h1>
+                <h1> class="indexLoggedin" 
+                <?php 
+                if($_SESSION["loginCheck"]==true){
+                    echo $_SESSION["mail"];
+                }   
+                ?>      
+                </h1>
+                
+                
+                
             </div>
             <div class="inedxLoginButtonDiv">
-                <a href="../logIn/login.html"><button class="inedxLoginButton" name="inedxLoginButton" >Giriş Yap</button></a>
+                <a href="login.php"><button class="inedxLoginButton" name="inedxLoginButton" >Giriş Yap</button></a>
             </div>
             
         </div>
@@ -98,15 +265,18 @@
     <footer>
         
         <h1>Sayfada Gezinin!</h1>
-        <a href="sehrim.html">Şehrim</a>
+        <a href="sehrim.php">Şehrim</a>
         <br>
-        <a href="../mirasımız/mirasimiz.html">Mirasımız</a>
+        <a href="mirasimiz.php">Mirasımız</a>
         <br>
-        <a href="../hakkında/hakkında.html">Hakkımda</a>
+        <a href="hakkımda.php">Hakkımda</a>
         <br>
         <a href="../iletisim/iletisim.html">İletişim</a>
         <br><br>
     </footer>
+
+
+
 
 </body>
 </html>
