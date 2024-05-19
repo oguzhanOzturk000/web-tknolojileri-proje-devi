@@ -330,7 +330,7 @@ session_start();
             ?><br><br>
             Cinsiyet:
             <?php
-                echo $_SESSION["radioBtn"]
+                echo $_SESSION["cinsiyetRadio"]
             ?><br>
             Doğum Tarihi:
             <?php

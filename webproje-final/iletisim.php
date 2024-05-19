@@ -28,8 +28,7 @@ session_start();
 
         }
         .flexbox-3{
-            min-width:10px ;
-            
+            min-width:10px ;    
         }
         body{
             background-image: url(resources/tophane.jpg);
@@ -361,12 +360,12 @@ session_start();
                     <br><br>
                     
                     
-                    <label for="mesajUrl">Alternatif İletişim Adresiniz: </label><input type="url" name="mesajUrl" id="" class="textBox">
+                    <label for="mesajUrl">Alternatif İletişim Adresiniz: </label><input type="text" name="mesajUrl" id="" class="textBox">
                     
                     <br><br>
                     <div class="input-wrapper">
                         <div class="input-1">
-                            <label for="radioBtn">Cinsiyetiniz:</label> <br>
+                            Cinsiyetiniz: <br>
                             <label for="radioBtn1">Kadın</label> <input type="radio" name="cinsiyetRadio" id="radioBtn1" value="Kadin" class="">
                             <label for="radioBtn2">Erkek</label><input type="radio" name="cinsiyetRadio" id="radioBtn2" value="Erkek" class="">
                         </div>
